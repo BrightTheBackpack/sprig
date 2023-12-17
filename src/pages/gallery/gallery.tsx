@@ -44,6 +44,7 @@ export default function Gallery({ games, tags }: { games: GameMetadata[], tags: 
 
 	useEffect(() => { filterTags(games); }, [tagFilter]);
 	useEffect(() => {
+		sortGames(games, sortOrder as SortOrder)
 		setGamesState(
 			games.filter(game => game.title.includes(searchQuery))
 		);
